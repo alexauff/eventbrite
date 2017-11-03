@@ -1,0 +1,18 @@
+<h1>Agenda</h1>
+
+<table> <!-- on crée un tableau <!-->
+  <tr>
+    <th>Evenements</th>
+    <th>Créateur</th>
+  </tr>
+
+<% @events.each do |event| %> <!-- pour chaque event : <!-->
+<tr>
+      <td><%= link_to event.description, event_path(event.id) %></td> <!-- on lui attribue sa description en passant par son id  <!-->
+      <td><%= event.creator.name%></td> <!-- on affiche le nom de son créateur <!-->
+   
+</tr>
+<%end%>
+</table>
+
+<%= link_to 'new', new_event_path %>

@@ -1,0 +1,12 @@
+<h1>Bienvenue !</h1>
+<p>Ton évènement</p>
+
+<%= form_for @event do |f| %>
+  date: <%= f.date_field :date %><br />
+  description: <%= f.text_area :description %><br />
+  lieu: <%= f.text_field :place %><br />
+  créateur: <%= f.collection_select(:creator_id, User.all, :id, :name) %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'back', events_path %>

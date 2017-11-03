@@ -1,0 +1,24 @@
+<h1><%= @user.name %></h1> <!-- on met le nim du créateur en titre<!-->
+
+<h2>Mes events</h2>
+
+<ul class="list-group"> <!-- on crée une liste <!-->
+	<% @user.created_events.each do |event| %> <!-- pour chaque event crée par un user<!-->
+		<li class="list-group-item"> <!-- on affiche une liste avec sa description et un lien <!-->
+			<%= event.description %>
+			<%= link_to "(see more)", event_path(event.id) %> <!-- on crée un lien hypertexte qui redirige vers la page de l'event <!-->
+		</li>
+	<%end%>
+</ul>
+</br>
+<h2>Mes participations</h2>
+
+<ul class="list-group"> <!-- on crée une liste <!-->
+	<% @user.attended_events.each do |event| %> <!-- pour chaque event crée par un user<!-->
+		<li class="list-group-item"> <!-- on affiche une liste avec sa description et un lien <!-->
+			<%= event.description %>
+			<%= link_to "(see more)", event_path(event.id) %> <!-- on crée un lien hypertexte qui redirige vers la page de l'event <!-->
+		</li>
+	<%end%>
+</ul>
+

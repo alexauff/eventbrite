@@ -1,0 +1,9 @@
+<h1>Bienvenue !</h1>
+<p>Inscris-toi</p>
+
+<%= form_for @user do |f| %>
+  nom: <%= f.text_field :name %><br />
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'back', users_path %>

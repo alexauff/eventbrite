@@ -1,0 +1,15 @@
+<h1>Mon évènement</h1>
+
+<h2><%= @event.creator.name%></h2>
+<p><%= @event.description %></p>
+<p><%= @event.date%></p>
+<p><%= @event.place%></p>
+
+<p><b>Participants</b></p>
+<ul class="list-group"> <!-- on crée une liste <!-->
+	<% @event.attendees.each do |user|%> <!-- pour chaque event crée par un user<!-->
+		<li class="list-group-item"> <!-- on affiche une liste avec sa description et un lien <!-->
+			<%= user.name%>
+		</li>
+	<%end%>
+</ul>

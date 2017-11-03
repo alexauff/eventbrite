@@ -1,0 +1,18 @@
+<h1>Listing</h1>
+<p></p>
+
+<table>
+  <tr>
+    <th>Utilisateurs</th>
+    <th>Nombre d'évènements</th>
+  </tr>
+
+<% @users.each do |user| %>
+<tr>
+      <td><%= link_to user.name, user_path(user.id) %></td>
+      <td><%= user.created_events.count%></td>
+</tr>
+<%end%>
+</table>
+
+<%= link_to 'new', new_user_path %>
